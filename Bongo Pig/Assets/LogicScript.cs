@@ -37,19 +37,24 @@ public class LogicScript : MonoBehaviour
     }
     public void StartGame()
     {
-        Time.timeScale = 1f;
+        StartCoroutine(TimerCoroutine());
         pigScript = pigScreen.GetComponent<PigScript>();
         rigidBody = pigScreen.GetComponent<Rigidbody2D>();
         spriteRenderer = pigScreen.GetComponent<SpriteRenderer>();
         candyMoveScript = containerForCandy.GetComponent<CandyMoveScript>();
         candySpawnScript = candySpawner.GetComponent<CandySpawnScript>();
         spriteRenderer.enabled = true;
-        rigidBody.simulated = true;
         Score.SetActive(true);
+        rigidBody.simulated = true;
         startScreen.SetActive(false);
         candyScreen.SetActive(true);
         candyMoveScript.enabled = true;
         candySpawnScript.enabled = true;
+    }
+    private IEnumerator TimerCoroutine()
+    { 
+        yield return new WaitForSecondsRealtime(5);
+        Time.timeScale = 1f;
     }
     public void ExitGame()
     { 
