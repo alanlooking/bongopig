@@ -9,18 +9,18 @@ public class LogicScript : MonoBehaviour
 {
     public int playerScore;
     public Text scoreText;
+    public Rigidbody2D rigidBody;
+    public SpriteRenderer spriteRenderer;
+    public CandyMoveScript candyMoveScript;
+    public CandySpawnScript candySpawnScript;
+    public PigScript pigScript;
     public GameObject gameOverScreen;
     public GameObject Score;
     public GameObject startScreen;
     public GameObject candyScreen;
     public GameObject pigScreen;
-    public SpriteRenderer spriteRenderer;
-    public Rigidbody2D rigidBody;
     public GameObject containerForCandy;
-    public CandyMoveScript candyMoveScript;
     public GameObject candySpawner;
-    public CandySpawnScript candySpawnScript;
-    public PigScript pigScript;
     public void addScore(int scoreToAdd)
     {
         playerScore = playerScore + scoreToAdd;
@@ -39,21 +39,17 @@ public class LogicScript : MonoBehaviour
     {
         Time.timeScale = 1f;
         pigScript = pigScreen.GetComponent<PigScript>();
-        pigScript.buttonIsEntered = true;
+        rigidBody = pigScreen.GetComponent<Rigidbody2D>();
         spriteRenderer = pigScreen.GetComponent<SpriteRenderer>();
+        candyMoveScript = containerForCandy.GetComponent<CandyMoveScript>();
+        candySpawnScript = candySpawner.GetComponent<CandySpawnScript>();
         spriteRenderer.enabled = true;
+        rigidBody.simulated = true;
         Score.SetActive(true);
         startScreen.SetActive(false);
         candyScreen.SetActive(true);
-        if (pigScript.startingTime < 0.5) 
-        {
-            candyMoveScript = containerForCandy.GetComponent<CandyMoveScript>();
-            candyMoveScript.enabled = true;
-            candySpawnScript = candySpawner.GetComponent<CandySpawnScript>();
-            candySpawnScript.enabled = true;
-            rigidBody = pigScreen.GetComponent<Rigidbody2D>();
-            rigidBody.simulated = true;
-        }
+        candyMoveScript.enabled = true;
+        candySpawnScript.enabled = true;
     }
     public void ExitGame()
     { 

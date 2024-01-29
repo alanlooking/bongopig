@@ -671,7 +671,6 @@ MonoBehaviour:
   flapForce: 5.97
   logicScript: {fileID: 0}
   birdIsAlive: 1
-  startingTime: 5
 --- !u!58 &524767102
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1012,17 +1011,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScore: 0
   scoreText: {fileID: 1119835041}
+  rigidBody: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  candyMoveScript: {fileID: 0}
+  candySpawnScript: {fileID: 0}
+  pigScript: {fileID: 0}
   gameOverScreen: {fileID: 567676559}
   Score: {fileID: 1119835039}
   startScreen: {fileID: 1334111220}
   candyScreen: {fileID: 1041878624}
   pigScreen: {fileID: 524767097}
-  spriteRenderer: {fileID: 0}
-  rigidBody: {fileID: 0}
   containerForCandy: {fileID: 370176232}
-  candyMoveScript: {fileID: 0}
   candySpawner: {fileID: 1041878624}
-  candySpawnScript: {fileID: 0}
 --- !u!4 &827468370
 Transform:
   m_ObjectHideFlags: 0

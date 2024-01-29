@@ -9,29 +9,19 @@ public class PigScript : MonoBehaviour
     public float flapForce;
     public LogicScript logicScript;
     public bool birdIsAlive = true;
-    public float startingTime = 5f;
-    public bool buttonIsEntered = false;
     // Start is called before the first frame update
     void Start()
     {
-        startingTime = 5f;
+        Time.timeScale = 0f;
         logicScript = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
     }
     // Update is called once per frame
     void Update()
     {
-        if (buttonIsEntered) 
+        if (Input.GetKeyDown(KeyCode.Space) && birdIsAlive)
         {
-            startingTime -= Time.deltaTime;
+            slotforrigidbody.velocity = Vector2.up * flapForce;
         }
-        if (buttonIsEntered && (startingTime<0.5))
-        {
-            if (Input.GetKeyDown(KeyCode.Space) && birdIsAlive)
-            {
-                slotforrigidbody.velocity = Vector2.up * flapForce;
-            }
-        }
-        Debug.Log(startingTime);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
