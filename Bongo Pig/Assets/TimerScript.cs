@@ -24,7 +24,7 @@ public class TimerScript : MonoBehaviour
             if (timeForBeginning > 0)
             {
                 int timeInt = Mathf.FloorToInt(timeForBeginning % 60);
-                timeForBeginning -= (Time.realtimeSinceStartup) / 3600;
+                timeForBeginning -= (Time.fixedDeltaTime) / 10f ;
                 timer.text = string.Format("{0}", timeInt);
             }
             else
