@@ -8,7 +8,9 @@ using Unity.VisualScripting;
 public class LogicScript : MonoBehaviour
 {
     public int playerScore;
+    public bool isGameStarted = false;
     public Text scoreText;
+    public Text timer;
     public Rigidbody2D rigidBody;
     public SpriteRenderer spriteRenderer;
     public CandyMoveScript candyMoveScript;
@@ -37,6 +39,7 @@ public class LogicScript : MonoBehaviour
     }
     public void StartGame()
     {
+        isGameStarted = true;
         StartCoroutine(TimerCoroutine());
         pigScript = pigScreen.GetComponent<PigScript>();
         rigidBody = pigScreen.GetComponent<Rigidbody2D>();
@@ -53,7 +56,7 @@ public class LogicScript : MonoBehaviour
     }
     private IEnumerator TimerCoroutine()
     { 
-        yield return new WaitForSecondsRealtime(5);
+        yield return new WaitForSecondsRealtime(7);
         Time.timeScale = 1f;
     }
     public void ExitGame()
