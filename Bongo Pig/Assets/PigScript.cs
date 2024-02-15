@@ -10,6 +10,8 @@ public class PigScript : MonoBehaviour
     public LogicScript logicScript;
     public bool birdIsAlive = true;
     // Start is called before the first frame update
+    [Header("Animation settings")]
+    public Animator animator;
     void Start()
     {
         Time.timeScale = 0f;
@@ -21,7 +23,9 @@ public class PigScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && birdIsAlive)
         {
             slotforrigidbody.velocity = Vector2.up * flapForce;
+            animator.SetBool("isJump", true);
         }
+        else animator.SetBool("isJump", false);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

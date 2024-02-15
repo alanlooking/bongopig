@@ -123,64 +123,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: first_anima
+      name: Sprite-0001-Sheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.46, y: 0.57}
+        x: 17
+        y: 26
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f95cd20d85136dc4f8fa8abfec182dfb
-      internalID: 1131716494
+      spriteID: eade767fa50ec324fb17de60d5c74a20
+      internalID: -396290406
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: second_anima
+      name: Sprite-0001-Sheet_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.47, y: 0.57}
+        x: 81
+        y: 26
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfcef843f8f792b40916a81b5ca18ab3
-      internalID: -785678514
+      spriteID: e757c422cb836d24986c09375c9ca234
+      internalID: 549663130
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: third_anima
+      name: Sprite-0001-Sheet_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.47, y: 0.57}
+        x: 145
+        y: 26
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8907506e51bab2c428f02d727032e089
-      internalID: 766685896
+      spriteID: 78a6403a00c4c8e43ade1ba0bbc23ebd
+      internalID: 835059767
       vertices: []
       indices: 
       edges: []
@@ -196,9 +196,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      first_anima: 1131716494
-      second_anima: -785678514
-      third_anima: 766685896
+      Sprite-0001-Sheet_0: -396290406
+      Sprite-0001-Sheet_1: 549663130
+      Sprite-0001-Sheet_2: 835059767
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
