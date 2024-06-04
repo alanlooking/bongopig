@@ -16,6 +16,7 @@ public class LogicScript : MonoBehaviour
     public CandyMoveScript candyMoveScript;
     public CandySpawnScript candySpawnScript;
     public PigScript pigScript;
+    public GameObject Timer1;
     public GameObject gameOverScreen;
     public GameObject Score;
     public GameObject startScreen;
@@ -39,6 +40,7 @@ public class LogicScript : MonoBehaviour
     }
     public void StartGame()
     {
+        Timer1.SetActive(true);
         isGameStarted = true;
         StartCoroutine(TimerCoroutine());
         pigScript = pigScreen.GetComponent<PigScript>();
