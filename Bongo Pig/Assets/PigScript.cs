@@ -15,24 +15,26 @@ public class PigScript : MonoBehaviour
     [Header("Animation settings")]
     public Animator animator;
     void Start()
-    { 
+    {
         Time.timeScale = 0f;
         logicScript = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
+        logicScript.lastScoreInt = PlayerPrefs.GetInt("LastScore");
+        logicScript.lastScoreText.text = logicScript.lastScoreInt.ToString();
     }
     // Update is called once per frame
     void Update()
     {
-        if ((logicScript.playerScore == 5)&&(firstSizeIncreasing == false))
+        if ((logicScript.playerScore > 4)&&(firstSizeIncreasing == false))
         {
             transform.localScale = transform.localScale + Vector3.one;
             firstSizeIncreasing = true;
         }
-        if ((logicScript.playerScore == 10) && (secondSizeIncreasing == false))
+        if ((logicScript.playerScore > 9) && (secondSizeIncreasing == false))
         {
             transform.localScale = transform.localScale + Vector3.one;
             secondSizeIncreasing = true;
         }
-        if ((logicScript.playerScore == 15) && (thirdSizeIncreasing == false))
+        if ((logicScript.playerScore > 14) && (thirdSizeIncreasing == false))
         {
             transform.localScale = transform.localScale + Vector3.one;
             thirdSizeIncreasing = true;

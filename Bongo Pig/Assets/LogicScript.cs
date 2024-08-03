@@ -7,8 +7,11 @@ using Unity.VisualScripting;
 
 public class LogicScript : MonoBehaviour
 {
+    public Text BestScoreText;
     public int playerScore;
+    public int lastScoreInt;
     public bool isGameStarted = false;
+    public Text lastScoreText;
     public Text scoreText;
     public Text timer;
     public Rigidbody2D rigidBody;
@@ -19,6 +22,7 @@ public class LogicScript : MonoBehaviour
     public GameObject Timer1;
     public GameObject gameOverScreen;
     public GameObject Score;
+    public GameObject LastScore;
     public GameObject startScreen;
     public GameObject candyScreen;
     public GameObject pigScreen;
@@ -28,6 +32,8 @@ public class LogicScript : MonoBehaviour
     {
         playerScore = playerScore + scoreToAdd;
         scoreText.text = playerScore.ToString();
+        lastScoreInt = playerScore;
+        lastScoreText.text = lastScoreInt.ToString();
     }
     public void RestartGame()
     {
@@ -36,10 +42,16 @@ public class LogicScript : MonoBehaviour
     public void GameOver()
     {
         gameOverScreen.SetActive(true);
+        if (playerScore > PlayerPrefs.GetInt("LastScore"))
+        {
+            PlayerPrefs.SetInt("LastScore", playerScore);
+        }
         Time.timeScale = 0f;
     }
     public void StartGame()
     {
+        BestScoreText.enabled = false;
+        lastScoreText.enabled = false;
         Timer1.SetActive(true);
         isGameStarted = true;
         StartCoroutine(TimerCoroutine());
@@ -55,6 +67,7 @@ public class LogicScript : MonoBehaviour
         candyScreen.SetActive(true);
         candyMoveScript.enabled = true;
         candySpawnScript.enabled = true;
+
     }
     private IEnumerator TimerCoroutine()
     { 
