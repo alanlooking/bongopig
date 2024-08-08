@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class CandyMiddleScript : MonoBehaviour
+public class CandyMiddleScript : Sounds
 {
     public LogicScript logicScript;
     // Start is called before the first frame update
@@ -22,6 +22,7 @@ public class CandyMiddleScript : MonoBehaviour
         if(collision.gameObject.layer == 3)
         { 
             logicScript.addScore(1);
+            PlaySound(sounds[0]);
         }
     }
 }

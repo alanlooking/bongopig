@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class PigScript : MonoBehaviour
+public class PigScript : Sounds
 {
     public Rigidbody2D slotforrigidbody;
     public float flapForce;
@@ -28,27 +28,32 @@ public class PigScript : MonoBehaviour
         {
             transform.localScale = transform.localScale + Vector3.one;
             firstSizeIncreasing = true;
+            PlaySound(sounds[2]);
         }
         if ((logicScript.playerScore > 9) && (secondSizeIncreasing == false))
         {
             transform.localScale = transform.localScale + Vector3.one;
             secondSizeIncreasing = true;
+            PlaySound(sounds[2]);
         }
         if ((logicScript.playerScore > 14) && (thirdSizeIncreasing == false))
         {
             transform.localScale = transform.localScale + Vector3.one;
             thirdSizeIncreasing = true;
+            PlaySound(sounds[2]);
         }
         if (Input.GetKeyDown(KeyCode.Space) && birdIsAlive)
         {
             slotforrigidbody.velocity = Vector2.up * flapForce;
             animator.SetBool("isJump", true);
+            PlaySound(sounds[0]);
         }
         else animator.SetBool("isJump", false);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         logicScript.GameOver();
+        PlaySound(sounds[3]);
         birdIsAlive = false;
     }
 }
