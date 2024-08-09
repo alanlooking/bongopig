@@ -16,6 +16,7 @@ public class PigScript : Sounds
     public Animator animator;
     void Start()
     {
+        PlaySound(sounds[4]);
         Time.timeScale = 0f;
         logicScript = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
         logicScript.lastScoreInt = PlayerPrefs.GetInt("LastScore");

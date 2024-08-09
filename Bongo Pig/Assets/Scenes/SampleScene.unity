@@ -758,6 +758,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4c84b099f14afe54bafc2305233a7092, type: 3}
   - {fileID: 8300000, guid: 146627ec20df47a4db4ec1ff12b0077f, type: 3}
   - {fileID: 8300000, guid: bb336cf48785ff848a3781c4f6db8abd, type: 3}
+  - {fileID: 8300000, guid: 7f8470e8ae36f7447a4f48b2fc2bdcdf, type: 3}
   slotforrigidbody: {fileID: 524767100}
   flapForce: 5.97
   logicScript: {fileID: 0}
