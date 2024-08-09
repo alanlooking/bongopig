@@ -54,7 +54,7 @@ public class LogicScript : Sounds
         PlaySound(sounds[0], 2);
         BestScoreText.enabled = false;
         lastScoreText.enabled = false;
-        Timer1.SetActive(true);
+        //Timer1.SetActive(true);
         isGameStarted = true;
         StartCoroutine(TimerCoroutine());
         pigScript = pigScreen.GetComponent<PigScript>();
