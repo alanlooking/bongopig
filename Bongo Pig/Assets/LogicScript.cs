@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
 
-public class LogicScript : MonoBehaviour
+public class LogicScript : Sounds
 {
     public Text BestScoreText;
     public int playerScore;
@@ -37,6 +37,7 @@ public class LogicScript : MonoBehaviour
     }
     public void RestartGame()
     {
+        PlaySound(sounds[0], 2);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void GameOver()
@@ -50,6 +51,7 @@ public class LogicScript : MonoBehaviour
     }
     public void StartGame()
     {
+        PlaySound(sounds[0], 2);
         BestScoreText.enabled = false;
         lastScoreText.enabled = false;
         Timer1.SetActive(true);
@@ -75,7 +77,8 @@ public class LogicScript : MonoBehaviour
         Time.timeScale = 1f;
     }
     public void ExitGame()
-    { 
+    {
+        PlaySound(sounds[1], 2);
         Application.Quit();
     }
 }

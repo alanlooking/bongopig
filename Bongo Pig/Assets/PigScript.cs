@@ -16,7 +16,7 @@ public class PigScript : Sounds
     public Animator animator;
     void Start()
     {
-        PlaySound(sounds[4]);
+        PlaySound(sounds[4], 0.5f);
         Time.timeScale = 0f;
         logicScript = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
         logicScript.lastScoreInt = PlayerPrefs.GetInt("LastScore");
@@ -54,7 +54,7 @@ public class PigScript : Sounds
     private void OnCollisionEnter2D(Collision2D collision)
     {
         logicScript.GameOver();
-        PlaySound(sounds[3]);
+        PlaySound(sounds[3], 20f);
         birdIsAlive = false;
     }
 }
